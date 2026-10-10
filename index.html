@@ -35,7 +35,7 @@ input,select{font:inherit;color:inherit;background:var(--card);border:1px solid 
 .im{position:relative;aspect-ratio:4/3;background:var(--bg);display:grid;place-items:center;font-size:44px}
 .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--card)}
 .im svg{width:62%;height:62%;stroke:var(--ink);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:.75}.im b{position:absolute;left:12px;bottom:8px;font-size:13px;color:var(--gold-d)}
-.im img~b{display:none}
+.im img~b{display:none}.im.ok svg{display:none}
 .top{background:#000;color:#aab6c8;font-size:13px}.top .w{display:flex;justify-content:space-between;gap:12px;padding-top:6px;padding-bottom:6px}.top a{margin-left:16px;color:#cfd9e8;text-decoration:none}
 .dd{position:relative;display:inline-block}.dd>div{display:none;position:absolute;left:0;top:100%;min-width:170px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px;box-shadow:0 10px 30px #0004}
 .dd>div a{display:block;color:var(--ink);margin:0;padding:7px 10px;border-radius:6px}.dd>div a:hover{background:var(--bg);color:var(--ink)}.dd:hover>div,.dd:focus-within>div{display:block}
@@ -794,7 +794,7 @@ const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 const fotoDaftar=x=>{if(x.f)return[/^(https?:|\/|img\/)/i.test(x.f)?x.f:'img/'+x.f];const l=[];if(IMG[x.c])l.push(IMG[x.c]);const k=slug(String(x.c));if(k)l.push('img/'+k+'.jpg','img/'+k+'.png','img/'+k+'.webp');l.push('img/'+slug(x.n)+'.jpg');return l};
 const foto=x=>fotoDaftar(x)[0];
 function fe(i){const r=(i.dataset.n||'').split('|').filter(Boolean);if(r.length){i.dataset.n=r.slice(1).join('|');i.src=r[0]}else i.remove()}
-const art=x=>`<img loading="lazy" alt="${x.n.replace(/"/g,'&quot;')}" src="${fotoDaftar(x)[0]}" data-n="${fotoDaftar(x).slice(1).join('|')}" onerror="fe(this)"><svg viewBox="0 0 160 120" role="img" aria-label="${x.k}">${S[x.k]||S.Laptop}</svg><b>${x.b||''}</b>`;
+const art=x=>`<img loading="lazy" alt="${x.n.replace(/"/g,'&quot;')}" src="${fotoDaftar(x)[0]}" data-n="${fotoDaftar(x).slice(1).join('|')}" onload="this.parentNode.classList.add('ok')" onerror="fe(this)"><svg viewBox="0 0 160 120" role="img" aria-label="${x.k}">${S[x.k]||S.Laptop}</svg><b>${x.b||''}</b>`;
 
 const $=i=>document.getElementById(i),rp=n=>'Rp '+n.toLocaleString('id-ID'),wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
 let cat='Semua';
