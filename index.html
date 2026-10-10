@@ -56,6 +56,16 @@ dialog{border:0;border-radius:14px;max-width:560px;width:calc(100% - 28px);paddi
 .tb{width:100%;border-collapse:collapse}.tb td{padding:10px 8px;border-bottom:1px solid var(--line);font-size:15px;vertical-align:middle}.tb td:first-child{color:var(--mut);width:38%}
 .bdg{display:inline-block;padding:2px 10px;border-radius:99px;font-size:13px;font-weight:600;white-space:nowrap}.bdg.y{background:#17704f22;color:var(--ok)}.bdg.m{background:#d9a21b33;color:var(--gold-d)}.bdg.n{background:#a33a2b22;color:var(--bad)}
 .im.dt,.cb h3.dt{cursor:pointer}.pds{margin-top:34px}.pds h2{font-size:22px;letter-spacing:-.02em;margin:0 0 12px}.stp{margin:0;padding-left:20px}.stp li{margin-bottom:6px}
+
+.pdi{cursor:default}.pdi.ok{cursor:zoom-in}.pdi.ok::after{content:'Klik untuk memperbesar';position:absolute;right:10px;bottom:10px;font-size:12px;background:#000b;color:#fff;padding:4px 10px;border-radius:99px;pointer-events:none}
+.th{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.th button{width:84px;height:64px;padding:0;border:2px solid var(--line);border-radius:8px;background:var(--card);overflow:hidden;cursor:pointer}.th button[aria-current=true]{border-color:var(--gold)}.th img{width:100%;height:100%;object-fit:contain;display:block}
+.lb{position:fixed;inset:0;z-index:100;background:#000e;display:flex;flex-direction:column;color:#fff;touch-action:none;user-select:none}.lb.hide{display:none}
+.lbs{flex:1;min-height:0;display:grid;place-items:center;overflow:hidden;cursor:zoom-in}.lbs.z{cursor:grab}.lbs.g{cursor:grabbing}
+.lbs img{max-width:96%;max-height:100%;object-fit:contain;transform-origin:0 0;will-change:transform;-webkit-user-drag:none;background:#fff}
+.lbb{position:absolute;top:12px;right:12px;display:flex;gap:8px;z-index:2}.lb button{font:inherit;color:#fff;background:#ffffff26;border:1px solid #ffffff55;border-radius:99px;min-width:42px;height:42px;padding:0 14px;cursor:pointer;font-size:18px}.lb button:hover{background:#ffffff44}
+.lbn{position:absolute;top:50%;transform:translateY(-50%);z-index:2}.lbp{left:12px}.lbq{right:12px}
+.lbf{display:flex;gap:8px;justify-content:center;align-items:center;padding:10px;flex-wrap:wrap}.lbf .lbt{display:flex;gap:6px}.lbf .lbt button{width:56px;height:44px;padding:0;overflow:hidden;border-radius:6px}.lbf .lbt button[aria-current=true]{border-color:var(--gold);border-width:2px}.lbf .lbt img{width:100%;height:100%;object-fit:contain;background:#fff;display:block}
+.lbh{font-size:12px;opacity:.75;text-align:center;padding-bottom:8px}
 @media(max-width:800px){.pdg{grid-template-columns:1fr}}
 .cbar{background:var(--card);border-bottom:1px solid var(--line)}.cbar>div{display:flex;flex-wrap:wrap;gap:8px;max-width:1120px;margin:0 auto;padding:10px 18px}
 .cbar a{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;padding:6px 14px;border:1px solid var(--line);border-radius:99px;text-decoration:none;font-size:14px;color:var(--ink);background:var(--bg)}
@@ -791,7 +801,8 @@ const WA='6287718001711';
 const IMG={};
 const S={'Laptop':'<rect x="34" y="22" width="92" height="58" rx="5"/><path d="M18 90h124l-8 10H26z"/>','PC & AIO':'<rect x="28" y="18" width="104" height="66" rx="6"/><path d="M80 84v18M56 102h48"/>','Monitor':'<rect x="24" y="20" width="112" height="64" rx="5"/><path d="M80 84v14M58 98h44"/>','Printer':'<rect x="48" y="16" width="64" height="26"/><rect x="26" y="42" width="108" height="42" rx="6"/><rect x="48" y="66" width="64" height="30"/>','Tinta & Cartridge':'<rect x="52" y="30" width="56" height="62" rx="6"/><path d="M52 52h56M70 30V20h20v10"/><path d="M80 66c8 10 8 16 0 16s-8-6 0-16z"/>','Keyboard & Mouse':'<rect x="14" y="40" width="96" height="48" rx="6"/><path d="M26 54h8m8 0h8m8 0h8m8 0h8M26 66h8m8 0h8m8 0h8m8 0h8M38 78h48"/><rect x="118" y="46" width="30" height="46" rx="15"/><path d="M133 46v18"/>','Jaringan':'<rect x="26" y="62" width="108" height="30" rx="6"/><path d="M48 62L36 34M112 62l12-28M80 62V26"/><path d="M46 77h.01M60 77h.01"/>','Flashdisk & Memori':'<rect x="52" y="18" width="56" height="62" rx="6"/><rect x="64" y="80" width="32" height="22"/><path d="M68 34h24M68 46h24"/>','Harddisk & SSD':'<rect x="34" y="26" width="92" height="68" rx="8"/><circle cx="80" cy="56" r="18"/><circle cx="80" cy="56" r="4"/><path d="M44 82h22"/>','Projector':'<rect x="22" y="38" width="116" height="48" rx="8"/><circle cx="106" cy="62" r="15"/><path d="M36 52h28M36 62h20"/>','Webcam':'<circle cx="80" cy="50" r="30"/><circle cx="80" cy="50" r="12"/><path d="M62 96h36M80 80v16"/>','Aksesoris':'<path d="M36 72V60a44 44 0 0 1 88 0v12"/><rect x="28" y="68" width="20" height="30" rx="8"/><rect x="112" y="68" width="20" height="30" rx="8"/>','Tablet':'<rect x="44" y="14" width="72" height="92" rx="8"/><path d="M72 96h16"/>','Komponen PC':'<rect x="48" y="30" width="64" height="64" rx="6"/><rect x="64" y="46" width="32" height="32"/><path d="M60 30V18M80 30V18M100 30V18M60 94v12M80 94v12M100 94v12M48 50H36M48 70H36M112 50h12M112 70h12"/>','CCTV':'<rect x="30" y="34" width="78" height="30" rx="8"/><circle cx="96" cy="49" r="9"/><path d="M42 64v18h24M108 49h22"/>','Kabel & Adaptor':'<rect x="26" y="40" width="40" height="40" rx="6"/><path d="M66 52h20c14 0 14 16 28 16h20M66 68h14M34 40V28M50 40V28"/>','Kasir & POS':'<path d="M44 14h72v92l-12-8-12 8-12-8-12 8-12-8-12 8z"/><path d="M58 36h44M58 52h44M58 68h28"/>','Speaker & Headset':'<rect x="48" y="14" width="64" height="92" rx="10"/><circle cx="80" cy="42" r="10"/><circle cx="80" cy="78" r="16"/>','UPS & Stabilizer':'<rect x="30" y="30" width="100" height="60" rx="8"/><path d="M82 42l-12 18h16l-12 18"/>'};
 const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-const fotoDaftar=x=>{if(x.f)return[/^(https?:|\/|img\/)/i.test(x.f)?x.f:'img/'+x.f];const l=[];if(IMG[x.c])l.push(IMG[x.c]);const k=slug(String(x.c));if(k)l.push('img/'+k+'.jpg','img/'+k+'.png','img/'+k+'.webp');l.push('img/'+slug(x.n)+'.jpg');return l};
+const fotoList=x=>String(x.f||'').split(/[;|\n]+/).map(t=>t.trim()).filter(Boolean).map(u=>/^(https?:|\/|img\/)/i.test(u)?u:'img/'+u);
+const fotoDaftar=x=>{const e=fotoList(x);if(e.length)return[e[0]];const l=[];if(IMG[x.c])l.push(IMG[x.c]);const k=slug(String(x.c));if(k)l.push('img/'+k+'.jpg','img/'+k+'.png','img/'+k+'.webp');l.push('img/'+slug(x.n)+'.jpg');return l};
 const foto=x=>fotoDaftar(x)[0];
 function fe(i){const r=(i.dataset.n||'').split('|').filter(Boolean);if(r.length){i.dataset.n=r.slice(1).join('|');i.src=r[0]}else i.remove()}
 const art=x=>`<img loading="lazy" alt="${x.n.replace(/"/g,'&quot;')}" src="${fotoDaftar(x)[0]}" data-n="${fotoDaftar(x).slice(1).join('|')}" onload="this.parentNode.classList.add('ok')" onerror="fe(this)"><svg viewBox="0 0 160 120" role="img" aria-label="${x.k}">${S[x.k]||S.Laptop}</svg><b>${x.b||''}</b>`;
@@ -953,10 +964,60 @@ $('cb').addEventListener('click',cetak);$('npp').addEventListener('click',cetakL
 function show(r){$('pd').classList.add('hide');$('cat').classList.toggle('hide',r);$('rk').classList.toggle('hide',!r);$('n1').className=r?'':'on';$('n2').className=r?'on':'';scrollTo(0,0)}
 let ys=0;const DS={};
 function back(){show(false);scrollTo(0,ys)}
+
+/* GALERI FOTO PRODUK (halaman detail): sampai 3 foto + zoom. Cara mengisi:
+   (a) kolom Foto diisi beberapa nama dipisah titik koma:  K-120.jpg; K-120-2.jpg; K-120-3.jpg
+   (b) atau cukup foto utama; foto tambahan dicari otomatis dengan nama <foto-utama>-2 dan <foto-utama>-3 (jpg/png/webp). */
+const G={x:null,u:[],i:0,tok:0};
+const cekGbr=u=>new Promise(r=>{const m=new Image();m.onload=()=>r(u);m.onerror=()=>r(null);m.src=u});
+async function cariTambahan(u,tok){const m=u.match(/^(.*?)(\.[a-z0-9]+)$/i);if(!m)return[];const eks=[m[2],'.jpg','.png','.webp','.jpeg'].filter((e,i,a)=>a.findIndex(y=>y.toLowerCase()==e.toLowerCase())==i),out=[];
+for(const n of [2,3]){let ada=null;for(const e of eks){for(const sp of['-','_']){if(G.tok!=tok)return out;ada=await cekGbr(m[1]+sp+n+e);if(ada)break}if(ada)break}if(ada)out.push(ada)}return out}
+function gantiUtama(i){G.i=i;const im=document.querySelector('#pdi img');if(im&&G.u[i])im.src=G.u[i];document.querySelectorAll('#th button').forEach((b,k)=>b.setAttribute('aria-current',k==i))}
+function gambarThumb(el,fn){el.innerHTML=G.u.length>1?G.u.map((u,k)=>`<button type="button" data-i="${k}" aria-label="Foto ${k+1}" aria-current="${k==G.i}"><img src="${u}" alt="" loading="lazy"></button>`).join(''):'';el.querySelectorAll('button').forEach(b=>b.onclick=e=>{e.stopPropagation();fn(+b.dataset.i)})}
+async function galeri(x){const tok=++G.tok;G.x=x;G.u=[];G.i=0;const st=$('pdi');if(!st)return;
+const im=st.querySelector('img');if(!im)return;
+await new Promise(r=>{if(im.complete&&im.naturalWidth)return r();im.addEventListener('load',r,{once:true});im.addEventListener('error',r,{once:true});setTimeout(r,4000)});
+if(G.tok!=tok||!st.querySelector('img')||!im.naturalWidth)return;
+const utama=im.getAttribute('src');let u=fotoList(x);
+if(u.length>1)u=u.slice(0,3);else u=[utama].concat(await cariTambahan(utama,tok)).slice(0,3);
+if(G.tok!=tok)return;G.u=u;G.i=0;gambarThumb($('th'),gantiUtama);
+st.onclick=()=>{if(st.classList.contains('ok'))bukaLb(G.i)}}
+/* lightbox + zoom */
+const L={s:1,tx:0,ty:0,p:new Map(),moved:0,d0:0,s0:1};
+const lbi=()=>$('lbi');
+function lbTerap(){const i=lbi(),a=$('lbs').getBoundingClientRect(),w=i.offsetWidth,h=i.offsetHeight;
+const mx=Math.max(0,(w*L.s-a.width)/2),my=Math.max(0,(h*L.s-a.height)/2);
+const bx=(a.width-w)/2,by=(a.height-h)/2; /* posisi tengah saat s=1 */
+L.tx=Math.min(mx,Math.max(-mx,L.tx));L.ty=Math.min(my,Math.max(-my,L.ty));
+if(L.s<=1){L.tx=0;L.ty=0}
+i.style.transform=`translate(${L.tx}px,${L.ty}px) scale(${L.s})`;i.style.transformOrigin='center center';
+$('lbs').classList.toggle('z',L.s>1);$('lbr').textContent=Math.round(L.s*100)+'%'}
+function lbZoom(s,cx,cy){const a=$('lbs').getBoundingClientRect(),o=L.s;s=Math.min(5,Math.max(1,s));if(s==o)return;
+if(cx!=null){const px=cx-(a.left+a.width/2),py=cy-(a.top+a.height/2);L.tx=px-(px-L.tx)*s/o;L.ty=py-(py-L.ty)*s/o}
+L.s=s;lbTerap()}
+function bukaLb(k){if(!G.u.length)return;$('lb').classList.remove('hide');document.body.style.overflow='hidden';lbPilih(k||0);$('lbx').focus()}
+function lbPilih(k){const n=G.u.length;G.i=(k+n)%n;L.s=1;L.tx=L.ty=0;lbi().src=G.u[G.i];lbi().alt=G.x?G.x.n:'';
+gambarThumb($('lbt'),lbPilih);$('lbp').style.display=$('lbq').style.display=n>1?'':'none';gantiUtama(G.i);lbTerap()}
+function tutupLb(){$('lb').classList.add('hide');document.body.style.overflow='';L.p.clear()}
+function initLb(){const st=$('lbs');
+$('lbx').onclick=tutupLb;$('lbp').onclick=()=>lbPilih(G.i-1);$('lbq').onclick=()=>lbPilih(G.i+1);
+$('lbl').onclick=()=>lbZoom(L.s*1.4);$('lbm').onclick=()=>lbZoom(L.s/1.4);$('lbr').onclick=()=>{L.s=1;L.tx=L.ty=0;lbTerap()};
+$('lb').addEventListener('click',e=>{if(e.target==$('lb'))tutupLb()});
+st.addEventListener('wheel',e=>{e.preventDefault();lbZoom(L.s*(e.deltaY<0?1.2:1/1.2),e.clientX,e.clientY)},{passive:false});
+st.addEventListener('pointerdown',e=>{st.setPointerCapture(e.pointerId);L.p.set(e.pointerId,[e.clientX,e.clientY]);L.moved=0;if(L.p.size==2){const [a,b]=[...L.p.values()];L.d0=Math.hypot(a[0]-b[0],a[1]-b[1]);L.s0=L.s}if(L.s>1)st.classList.add('g')});
+st.addEventListener('pointermove',e=>{if(!L.p.has(e.pointerId))return;const o=L.p.get(e.pointerId),dx=e.clientX-o[0],dy=e.clientY-o[1];L.p.set(e.pointerId,[e.clientX,e.clientY]);
+if(L.p.size==2){const [a,b]=[...L.p.values()];const d=Math.hypot(a[0]-b[0],a[1]-b[1]);if(L.d0)lbZoom(L.s0*d/L.d0,(a[0]+b[0])/2,(a[1]+b[1])/2);L.moved=9;return}
+L.moved+=Math.abs(dx)+Math.abs(dy);if(L.s>1){L.tx+=dx;L.ty+=dy;lbTerap()}});
+const lepas=e=>{const ada=L.p.delete(e.pointerId);st.classList.remove('g');if(ada&&e.type=='pointerup'&&L.p.size==0&&L.moved<6){L.s>1?lbZoom(1):lbZoom(2.5,e.clientX,e.clientY)}};
+st.addEventListener('pointerup',lepas);st.addEventListener('pointercancel',lepas);
+document.addEventListener('keydown',e=>{if($('lb').classList.contains('hide'))return;if(e.key=='Escape')tutupLb();else if(e.key=='ArrowLeft')lbPilih(G.i-1);else if(e.key=='ArrowRight')lbPilih(G.i+1);else if(e.key=='+'||e.key=='=')lbZoom(L.s*1.4);else if(e.key=='-')lbZoom(L.s/1.4);else if(e.key=='0'){L.s=1;L.tx=L.ty=0;lbTerap()}});
+addEventListener('resize',lbTerap);addEventListener('hashchange',()=>{if(!$('lb').classList.contains('hide'))tutupLb()});
+}
+if(document.readyState=='loading')document.addEventListener('DOMContentLoaded',initLb);else initLb();
 function openP(i,noy){const x=P[i],br=x.b||'';if(!noy)ys=scrollY;
 const rel=P.filter(y=>y.k==x.k&&y!=x).sort((a,b)=>(b.t>0)-(a.t>0)).slice(0,4);
 $('pd').innerHTML=`<div class="w" style="padding-top:24px;padding-bottom:30px"><p class="kd"><a href="#/">Beranda</a> / <a href="#produk" data-k="${x.k}">${x.k}</a> / ${x.n}</p>
-<div class="pdg"><div class="im pdi">${art(x)}</div><div><span class="cat">${br||x.k}</span><h1>${x.n}</h1><div class="kd">Kode barang: ${x.c.trim()}</div>
+<div class="pdg"><div><div class="im pdi" id="pdi">${art(x)}</div><div class="th" id="th"></div></div><div><span class="cat">${br||x.k}</span><h1>${x.n}</h1><div class="kd">Kode barang: ${x.c.trim()}</div>
 <div class="pr big${x.p?'':' nil'}">${x.p?rp(x.p):'Hubungi kami untuk harga'}</div>
 <span class="bdg ${stt(x.t)[0]}">${stt(x.t)[1]} · ${x.t} unit</span>
 <div class="bt" style="margin-top:16px"><button class="btn alt" onclick="back()">Kembali</button><a class="btn wa" target="_blank" rel="noopener" href="${wa('Halo, saya tertarik dengan '+x.n+' (kode '+x.c.trim()+'). Apakah masih tersedia?')}">Tanya via WhatsApp</a></div>
@@ -967,7 +1028,7 @@ ${(x.sp||[]).length?`<div class="pds"><h2>Spesifikasi</h2><table class="tb">${x.
 <div class="pds"><h2>Informasi produk</h2><table class="tb"><tr><td>Merek</td><td>${br||'-'}</td></tr><tr><td>Kategori</td><td>${x.k}</td></tr><tr><td>Kode barang</td><td>${x.c.trim()}</td></tr><tr><td>Nama lengkap</td><td>${x.d}</td></tr><tr><td>Garansi</td><td>Garansi resmi. Simpan nota pembelian untuk klaim.</td></tr></table></div>
 <div class="pds"><h2>Cara memesan</h2><ol class="stp"><li>Tanyakan stok dan harga terbaru lewat WhatsApp.</li><li>Datang ke toko, atau diskusikan opsi lain dengan tim kami.</li><li>Lakukan pembayaran dan simpan nota untuk garansi.</li></ol></div>
 ${rel.length?`<div class="pds"><h2>Produk serupa</h2><div class="grid">${rel.map(card).join('')}</div></div>`:''}</div>`;
-$('cat').classList.add('hide');$('rk').classList.add('hide');$('pd').classList.remove('hide');$('n1').className='';$('n2').className='';scrollTo(0,0);try{history.replaceState(null,'','#/p/'+encodeURIComponent(x.c))}catch(_){}}
+$('cat').classList.add('hide');$('rk').classList.add('hide');$('pd').classList.remove('hide');galeri(x);$('n1').className='';$('n2').className='';scrollTo(0,0);try{history.replaceState(null,'','#/p/'+encodeURIComponent(x.c))}catch(_){}}
 function route(){const m=location.hash.match(/^#\/p\/(.+)$/);let i=-1;if(m){try{i=P.findIndex(x=>x.c==decodeURIComponent(m[1]))}catch(_){}}if(i>=0)openP(i,1);else show(location.hash=='#/rakit')}
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;e.preventDefault();const h=a.getAttribute('href');
 if(h=='#/rakit'||h=='#/'){show(h=='#/rakit');try{history.replaceState(null,'',h)}catch(_){}}
@@ -979,5 +1040,6 @@ $('tg').textContent='Data stok per '+TGL+'. Harga yang belum tercantum ditampilk
 $('tg').textContent='Memuat data stok...';
 muatStok().then(r=>{P.length=0;P.push(...r.items);if(r.tgl)TGL=r.tgl;SUMBER='stok.xlsx';MASALAH=r.masalah}).catch(e=>{SUMBER='data bawaan ('+e.message+')';console.warn('stok.xlsx tidak dipakai:',e.message)}).then(mulai);
 </script>
+<div class="lb hide" id="lb" role="dialog" aria-modal="true" aria-label="Foto produk"><div class="lbb"><button id="lbm" aria-label="Perkecil">−</button><button id="lbl" aria-label="Perbesar">+</button><button id="lbr" aria-label="Ukuran asli">100%</button><button id="lbx" aria-label="Tutup">✕</button></div><button class="lbn lbp" id="lbp" aria-label="Foto sebelumnya">‹</button><div class="lbs" id="lbs"><img id="lbi" alt="" draggable="false"></div><button class="lbn lbq" id="lbq" aria-label="Foto berikutnya">›</button><div class="lbf"><div class="lbt" id="lbt"></div></div><div class="lbh">Klik atau gulir untuk memperbesar · seret untuk menggeser · panah kiri/kanan ganti foto · Esc menutup</div></div>
 </body>
 </html>
